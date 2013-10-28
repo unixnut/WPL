@@ -91,8 +91,8 @@
       // The reCAPTCHA might not have validated successfully, so generate it 
       // here in order that the error code is available 
       $this->recaptcha->setContent(recaptcha_get_html($this->recaptcha_pubkey,
-                                                      $this->rule->get_error_code()),
-                                                      $this->use_ssl);
+                                                      $this->rule->get_error_code(),
+                                                      $this->use_ssl));
     }
   }
 ?>
