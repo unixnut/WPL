@@ -1,4 +1,6 @@
 {
+    "name": "unixnut/wpl",
+    "description": "Warpspace PHP library, a library of general functions and classes for PHP use",
     "license": "GPL",
     "authors": [
         {
