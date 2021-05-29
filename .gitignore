@@ -1,5 +1,10 @@
 .svn
 .*.sw?
 
-# contrib
-urls.inc
+contrib/urls.inc
+
+# file types
+*.old
+*.bak
+
+/vendor

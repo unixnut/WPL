@@ -1,0 +1,16 @@
+{
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Alastair Irvine",
+            "email": "alastair@plug.org.au"
+        }
+    ],
+    "require": {},
+    "include-path": ["app/include", "contrib"],
+    "autoload": {
+        "psr-4": {
+            "WPL\\": "app/classes/WPL"
+        }
+    }
+}
