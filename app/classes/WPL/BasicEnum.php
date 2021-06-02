@@ -10,16 +10,16 @@ abstract class BasicEnum {
     // Enumeration constructor
     final public function __construct($value) {
         try {
-            $c = new ReflectionClass($this);
+            $c = new \ReflectionClass($this);
   
             // Content validation
             if (!in_array($value, $c->getConstants())) {
-                throw new ValueError("Value not present in enum");
+                throw new \ValueError("Value not present in enum");
             }
             $this->value = $value;
         }
-        catch (Exception $k){
-            echo $k->getMessage();
+        catch (\Exception $k){
+            error_log($k->getMessage());
         }
     }
   
