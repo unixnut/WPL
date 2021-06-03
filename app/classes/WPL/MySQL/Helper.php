@@ -586,7 +586,7 @@ class Helper
     ]; 
 
 
-    static function desc(int $id)
+    static function desc($id)
     {
         return self::$ERROR_DESCRIPTIONS[$id];
     }
