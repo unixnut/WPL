@@ -5,7 +5,7 @@ namespace WPL\MySQL;
 
 class Helper
 {
-    const ERROR_DESCRIPTIONS = [
+    static $ERROR_DESCRIPTIONS = [
         MySqlError::ER_HASHCHK => "hashchk", // 1000
         MySqlError::ER_NISAMCHK => "isamchk", // 1001
         MySqlError::ER_NO => "NO", // 1002
@@ -588,7 +588,7 @@ class Helper
 
     static function desc(int $id)
     {
-        return self::ERROR_DESCRIPTIONS[$id];
+        return self::$ERROR_DESCRIPTIONS[$id];
     }
 }
 
