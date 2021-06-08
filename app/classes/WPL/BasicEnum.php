@@ -14,7 +14,7 @@ abstract class BasicEnum {
   
             // Content validation
             if (!in_array($value, $c->getConstants())) {
-                throw new \ValueError("Value not present in enum");
+                throw new \DomainException("Value not present in enum");
             }
             $this->value = $value;
         }
