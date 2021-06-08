@@ -602,7 +602,7 @@ class Helper
     static function decode_msg($s)
     {
         if (!preg_match('/.*\(([0-9]+)\)$/', $s, $matches))
-            throw new \ValueError("Invalid MySQL error string");
+            throw new \DomainException("Invalid MySQL error string");
 
         return (int)$matches[1];
     }
