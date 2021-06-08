@@ -5,7 +5,7 @@ namespace WPL\MySQL;
 
 class Helper
 {
-    static $ERROR_DESCRIPTIONS = [
+    protected static $ERROR_DESCRIPTIONS = [
         MySqlError::ER_HASHCHK => "hashchk", // 1000
         MySqlError::ER_NISAMCHK => "isamchk", // 1001
         MySqlError::ER_NO => "NO", // 1002
@@ -589,6 +589,22 @@ class Helper
     static function desc($id)
     {
         return self::$ERROR_DESCRIPTIONS[$id];
+    }
+
+
+    /**
+     * Decodes the message from a PDOException
+     * E.g. "SQLSTATE[HY000] [2005] Unknown MySQL server host 'asfdasdf978asd78asd78g78asdf9.xyz' (25)"
+     *
+     * @return System error code that caused the MySQL error, e.g. 25
+     * @note There is no need to extract the MySQL error code, because that's stored separately in the PDOException object
+     */
+    static function decode_msg($s)
+    {
+        if (!preg_match('/.*\(([0-9]+)\)$/', $s, $matches))
+            throw new \ValueError("Invalid MySQL error string");
+
+        return (int)$matches[1];
     }
 }
 
